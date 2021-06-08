@@ -5,3 +5,23 @@ const session = require(express-session)
 const MongoStore = require(connect-mongo)(session)
 const connectDB = require(',/config/database')
 require('dotenv').config({path: './config/.env'})
+
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+// what does this line do?
+app.use(epress.urlencoded({ extended: true}))
+app.use(express.json())
+
+// sessions
+app.use(
+    session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    })
+)
+
+app.use('/', mainRoutes)
+app.use('/journals', journalRoutes)
+app.use('/feed', feedRoutes)
