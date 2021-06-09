@@ -26,3 +26,7 @@ app.use(
 app.use('/', mainRoutes)
 app.use('/journal', journalRoutes)
 app.use('/feed', feedRoutes)
+
+app.listen(process.env.PORT, () => {
+    console.log('Serving running, but is it fast?')
+})
