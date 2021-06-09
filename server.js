@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const session = require(express-session)
 const MongoStore = require(connect-mongo)(session)
 const connectDB = require(',/config/database')
+const mainRoutes = require('./routes/main')
 require('dotenv').config({path: './config/.env'})
 
 app.set('view engine', 'ejs')
@@ -23,5 +24,5 @@ app.use(
 )
 
 app.use('/', mainRoutes)
-app.use('/journals', journalRoutes)
+app.use('/journal', journalRoutes)
 app.use('/feed', feedRoutes)
