@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const connectDB = require('./config/database')
 // const mainRoutes = require('./routes/main')
-// const journalRoutes = require('./routes/journal')
+const journalRoutes = require('./routes/journal')
 require('dotenv').config({path: './config/.env'})
 
 connectDB()
@@ -29,7 +29,7 @@ app.use(
 )
 
 
-// app.use('/', mainRoutes)
+app.use('/journal', journalRoutes)
 // app.use('/journal', journalRoutes)
 // app.use('/feed', feedRoutes)
 
