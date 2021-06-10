@@ -14,7 +14,7 @@ connectDB()
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // what does this line do?
-app.use(express.urlencoded({ extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 // app.use(logger('dev'))
 
