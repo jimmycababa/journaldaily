@@ -28,7 +28,7 @@ app.use(
     })
 )
 
-
+app.use('/', journalRoutes)
 app.use('/journal', journalRoutes)
 // app.use('/journal', journalRoutes)
 // app.use('/feed', feedRoutes)

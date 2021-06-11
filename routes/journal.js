@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const homeController = require('../controllers/journals')
+const journalsController = require('../controllers/journals')
 
-router.get('/journal', journalsController.getJournal)
+router.get('/', journalsController.getJournal)
 
 module.exports = router
