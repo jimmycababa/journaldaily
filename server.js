@@ -28,9 +28,9 @@ app.use(
     })
 )
 
-app.use('/', journalRoutes)
+// index page. need this as a default for the browser to kick back to as default
+app.use('/', mainRoutes)
 app.use('/journal', journalRoutes)
-// app.use('/journal', journalRoutes)
 // app.use('/feed', feedRoutes)
 
 app.listen(process.env.PORT, () => {
