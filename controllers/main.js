@@ -1,7 +1,7 @@
-// const Main = require('../models/Main')
+const Main = require('../models/Main')
 
-// module.exports = {
-//     getMain: (req,res) => {
-//         res.render('main.ejs')
-//     }
-// }
+module.exports = {
+    getIndex: (req,res) => {
+        res.render('main.ejs')
+    }
+}
