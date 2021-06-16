@@ -11,18 +11,26 @@
     <div class="row" style="display: flex;">
     <div class="col-md-6">
         Main Journal Entry
-        <h1>Hello World</h1>
+        <h1>This Is The Main Page</h1>
     </div>
     <div class="col-md-6">
         Feed
     </div>
 </div>
 
-<button class="add"> Add Entry </button>
-<button class="feed"> Add To Feed </button>
-<button class="export"> Export </button>
+<ul>
+    <% entry.forEach( el => { %>
+            <li class='journalEntry'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.entry %></span>
+            
+                <button class="add"> Add Entry </button>
+                <button class="feed"> Add To Feed </button>
+                <button class="export"> Export </button>
+            </li>
+    <% }) %>    
+    </ul>
 
-<form action="">
+<form action="createEntry" method='POST'>
     <textarea class="textBox" cols="30" rows="10" placeholder="enter memory" name='journalItem'></textarea>
 </form>
 
