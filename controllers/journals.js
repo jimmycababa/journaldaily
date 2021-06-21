@@ -3,9 +3,12 @@ const Journal = require('../models/Journal')
 module.exports = {
     getEntry: async (req,res) => {
         try {
-            
+            const journalItems = await Journal.countDocuments({completed: false})
+            res.render('jounal.ejs', {entry: journalItems})
+        }catch(err){
+            console.log(err)
         }
-    }
+    },
     
     createEntry: async (res, req) => {
         try {

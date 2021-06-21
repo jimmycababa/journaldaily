@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Journal</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="row" style="display: flex;">
     <div class="col-md-6">
-        Personal Journal
-        <h1>Hello World</h1>
+        Main Journal Entry
+        <h1>This Is The Main Page</h1>
     </div>
     <div class="col-md-6">
-        feed
+        Feed
     </div>
 </div>
 
+<ul>
+    <% entry.forEach( el => { %>
+            <li class='journalEntry'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.entry %></span>
+            
+                <button class="add"> Add Entry </button>
+                <button class="feed"> Add To Feed </button>
+                <button class="export"> Export </button>
+            </li>
+    <% }) %>    
+    </ul>
+
+<form action="/journals/createEntry" method='POST'>
+    <textarea class="textBox" cols="30" rows="10" placeholder="enter memory" name='journalItem'></textarea>
+</form>
 
 </body>
 </html>
